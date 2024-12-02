@@ -1,5 +1,5 @@
 {
-  "name": "constructionpage",
+  "name": "speech-to-text",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
+    "axios": "^1.7.8",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.439.0",
     "react": "^18.3.1",

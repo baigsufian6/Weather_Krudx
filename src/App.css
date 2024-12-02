@@ -1,9 +1,306 @@
-*{
+/* App.css */
+
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  margin: 0;
   padding: 0;
-  margin:0;
- box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
 }
 
-body{
-  font-family: "Poppins",sans-serif;
+.app-container {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
+.app-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #444;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.control-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.start-button, .stop-button, .upload-button {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.start-button:hover, .stop-button:hover, .upload-button:hover {
+  background: linear-gradient(45deg, #36d1dc, #5b86e5);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.audio-preview {
+  margin-bottom: 20px;
+}
+
+.audio-player {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: #d9534f;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.transcription-box {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  min-height: 150px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.transcription-box:hover {
+  background: #e9e9e9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.transcription-box p {
+  margin: 0;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .app-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .control-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .start-button, .stop-button, .upload-button {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  .transcription-box {
+    min-height: 120px;
+  }
+
+  .transcription-box p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    width: 98%;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .control-container {
+    gap: 10px;
+  }
+
+  .start-button, .stop-button, .upload-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .transcription-box {
+    min-height: 100px;
+  }
+
+  .transcription-box p {
+    font-size: 14px;
+  }
+}
+
+/* Additional styles for better UI */
+.app-container {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.start-button, .stop-button, .upload-button {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.audio-player {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.transcription-box {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.error-message {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Adding more detailed styles for better appearance */
+.app-container {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.control-container {
+  margin-bottom: 30px;
+}
+
+.start-button, .stop-button, .upload-button {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.audio-preview {
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.audio-player {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.button-container {
+  margin-top: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.error-message {
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.transcription-box {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.transcription-box p {
+  margin: 0;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Adding more detailed media queries for better responsiveness */
+@media (max-width: 768px) {
+  .app-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .control-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .start-button, .stop-button, .upload-button {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  .transcription-box {
+    min-height: 120px;
+  }
+
+  .transcription-box p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    width: 98%;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .control-container {
+    gap: 10px;
+  }
+}
+
+ 
